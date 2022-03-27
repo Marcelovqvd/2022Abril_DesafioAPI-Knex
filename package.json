@@ -1,0 +1,19 @@
+{
+  "name": "desafio_fullstack",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "repository": "git@github.com:Marcelovqvd/desafio_fullstack.git",
+  "author": "Marcelo <marcelovqvd@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "knex": "^1.0.4",
+    "pg": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
