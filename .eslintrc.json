@@ -1,7 +1,7 @@
 {
     "env": {
         "es6": true,
-    "node": true
+        "node": true
     },
     "extends": [
         "airbnb-base",
@@ -23,6 +23,10 @@
     "semi": ["error", "never"],
     "quotes": ["error", "single"],
     "no-console": "off",
+    "no-shadow": "off",
+    "no-useless-constructor": "off",
+			"no-empty-function": "off",
+			"lines-between-class-members": "off",
     "import/prefer-default-export": "off"
     }
 }
