@@ -9,7 +9,7 @@ services:
       - 5432:5432
     environment:
       - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_PASSWORD=123
       - POSTGRES_DB=contelle_db
     volumes:
       - pgdata:/data/postgres
