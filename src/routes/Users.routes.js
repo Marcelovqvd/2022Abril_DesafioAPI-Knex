@@ -1,5 +1,5 @@
-const express = require('express')
-const usersRoutes = express.Router()
+import { Router } from 'express';
+const usersRoutes = Router()
 
 usersRoutes.post("/users", (request, response) => {
   return response.send()
@@ -9,4 +9,4 @@ usersRoutes.get("/users", (request, response) => {
   return console.log('get')
 });
 
-module.exports = usersRoutes
+export default usersRoutes
