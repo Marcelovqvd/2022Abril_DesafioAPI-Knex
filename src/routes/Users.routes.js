@@ -8,7 +8,7 @@ usersRoutes.post("/users", (request, response) => {
 });
 
 usersRoutes.get("/users", (request, response) => {
-  knex('user').then(results => response.json(results))
+  return knex('user').then(results => response.json(results))
 });
 
-export {usersRoutes}
+export { usersRoutes }
