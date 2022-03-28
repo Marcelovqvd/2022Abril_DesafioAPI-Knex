@@ -1,10 +1,11 @@
+
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-export const up = knex => knex.schema.createTable('users', table => {
+ export const up = knex => knex.schema.createTable('user', table => {
   table.increments('id')
-  table.text('email').unique().notNullable()
+  table.text('email').unique()
   table.text('password')
 
   table.timestamp('created_at').defaultTo(knex.fn.now())
@@ -15,4 +16,4 @@ export const up = knex => knex.schema.createTable('users', table => {
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> }
  */
-export const down = knex => knex.schema.dropTable('users')
+export const down = knex => knex.schema.dropTable('user')

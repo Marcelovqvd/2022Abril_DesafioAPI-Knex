@@ -9,13 +9,13 @@ services:
       - 5432:5432
     environment:
       - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=123
+      - POSTGRES_PASSWORD=password
       - POSTGRES_DB=contelle_db
     volumes:
       - pgdata:/data/postgres
   app:
     build: .
-    container_name: contelle
+    container_name: app_contelle
     restart: always
     ports:
       - 3333:3333
