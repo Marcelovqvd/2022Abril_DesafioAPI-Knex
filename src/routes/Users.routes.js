@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import { knex } from '../database/database.js'
+
 const usersRoutes = Router()
 
 usersRoutes.post("/users", (request, response) => {
@@ -6,7 +8,7 @@ usersRoutes.post("/users", (request, response) => {
 });
 
 usersRoutes.get("/users", (request, response) => {
-  return console.log('get')
+  knex('user').then(results => response.json(results))
 });
 
-export default usersRoutes
+export {usersRoutes}
