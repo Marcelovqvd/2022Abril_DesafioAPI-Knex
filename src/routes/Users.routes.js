@@ -7,6 +7,6 @@ usersRoutes.post('/users', (request, response) => {
   return response.send()
 });
 
-usersRoutes.get('/users', (request, response) => knex('user').then(results => response.json(results)));
+usersRoutes.get('/users', (request, response) => knex('users').then(results => response.json(results)));
 
 module.exports = usersRoutes
