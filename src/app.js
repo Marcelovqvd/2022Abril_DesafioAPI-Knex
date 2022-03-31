@@ -1,9 +1,9 @@
-import express, { json } from 'express'
-import usersRoutes from './routes/Users.routes.js'
+const express = require("express");
+const cors = require("cors");
 
 const app = express()
 
-app.use(json())
-app.use(usersRoutes)
+app.use(cors());
+app.use(express.json());
 
-app.listen(3333, () => console.log('Server listening on port 3333'))
+module.exports = app;
