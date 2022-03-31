@@ -16,4 +16,4 @@ usersRoutes.put("/users/:id", new UpdateUserController().route)
 usersRoutes.delete("/users/:id", new DeleteUserController().route())
 usersRoutes.delete("/users", new DeleteAllUsersController().route())
 
-export default usersRoutes
+module.exports = usersRoutes

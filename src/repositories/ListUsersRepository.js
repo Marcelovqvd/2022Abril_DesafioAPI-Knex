@@ -1,4 +1,4 @@
-const database = require("../../database");
+const database = require("../database/index");
 const User = require("../entities/User");
 
 module.exports = class ListUsersRepository {

@@ -1,21 +1,26 @@
-const development = {
-  client: 'pg',
-  connection: {
-    user: 'user',
-    database: 'contele_db',
-    password: 'password'
-  },
-  pool: {
-    min: 2,
-    max: 10,
-  },
-  migrations: {
-    tableName: 'knex_migrations',
-    directory: __dirname + "/src/data/migrations",
-  },
-  seeds: {
-    directory: './src/database/seeds'
-  }
-};
+// Update with your config settings.
 
-export default development
+/**
+ * @type { Object.<string, import("knex").Knex.Config> }
+ */
+module.exports = {
+  development: {
+    client: 'postgresql',
+    connection: {
+      user: 'user',
+      database: 'contele_db',
+      password: 'password'
+    },
+    pool: {
+      min: 2,
+      max: 10
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: `${__dirname }/src/database/migrations`,
+    },
+    seeds: {
+      directory: `${__dirname }/src/database/seeds`
+    }
+  },
+};

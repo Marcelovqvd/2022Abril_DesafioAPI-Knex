@@ -1,8 +1,8 @@
 const ListUsers = require("../../useCases/ListUsersUseCase");
 
-module.exports = class GetAllUserController {
+module.exports = class ListUsersControllers {
     async route(request, response) {
-        const response = await new ListUsers().Execute()
-        response.json(response);
+        const listUsers = await new ListUsers().Execute()
+        response.json(listUsers);
     }
 };

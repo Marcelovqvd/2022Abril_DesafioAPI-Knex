@@ -3,9 +3,11 @@
  * @returns { Promise<void> } 
  */
 
-export async function seed(knex) {
-  await knex('users').del();
-  return await knex('users').insert([
-    { email: 'outro@email.com', password: 'password' }
-  ]);
+exports.seed = function(knex) {
+  return knex('users').del()
+    .then(function () {
+      return knex('users').insert([
+        { email: 'outro@email.com', password: 'password' }
+      ]);
+    })
 }
