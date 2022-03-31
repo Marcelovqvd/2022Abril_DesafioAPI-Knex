@@ -1,4 +1,3 @@
 import knexfile from '../../knexfile.js'
-const knex = knexfile['development']
-
+const knex = knexfile.connection
 export default knex

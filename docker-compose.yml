@@ -3,20 +3,20 @@ version: '3.9'
 services:
   database: 
     image: postgres
-    container_name: database_contelle
+    container_name: database_contele
     restart: always
     ports:
       - 5432:5432
     environment:
       - POSTGRES_USER=user
       - POSTGRES_PASSWORD=password
-      - POSTGRES_DB=contelle_db
+      - POSTGRES_DB=contele_db
     volumes:
       - pgdata:/data/postgres
   
   app:
     build: .
-    container_name: app_contelle
+    container_name: app_contele
     ports:
       - 3333:3333
     volumes:

@@ -2,7 +2,7 @@ const development = {
   client: 'postgresql',
   connection: {
     user: 'user',
-    database: 'contelle_db',
+    database: 'contele_db',
     email: 'marcelo@email.com',
     password: 'password'
   },
