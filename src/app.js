@@ -1,9 +1,9 @@
-const express = require('express')
-const usersRoutes = require('./routes/Users.routes.js')
+import express, { json } from 'express'
+import usersRoutes from './routes/Users.routes.js'
 
 const app = express()
 
-app.use(express.json())
+app.use(json())
 app.use(usersRoutes)
 
 app.listen(3333, () => console.log('Server listening on port 3333'))

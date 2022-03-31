@@ -1,7 +1,7 @@
-const express = require('express');
-const knex = require('../database')
+import { Router } from 'express';
+import knex from '../database';
 
-const usersRoutes = express.Router()
+const usersRoutes = Router()
 
 usersRoutes.post('/users', (request, response) => {
   return response.send()
@@ -9,4 +9,4 @@ usersRoutes.post('/users', (request, response) => {
 
 usersRoutes.get('/users', (request, response) => knex('users').then(results => response.json(results)));
 
-module.exports = usersRoutes
+export default usersRoutes
