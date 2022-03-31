@@ -1,0 +1,41 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "Documentação",
+    "version": "1.0.0",
+    "title": "Contele API"
+  },
+  "host": "localhost:3001",
+  "basePath": "/api/v1",
+  "tags": [
+    {
+        "name": "User",
+        "description": "Manipulação de usuários"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": ["User"],
+        "summary": "Lista usúarios",
+        "description": "Lista todos os usúarios cadastrados",
+        "operationId": "listUsers",
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Operação Realizada com sucesso",
+            "schema": {
+                "$ref": "#/definitions/User"
+            }
+          },
+          "400": {
+            "description": "Erro de requisição"
+          },
+          "404": {
+            "description": "Não encontrado"
+          }
+        }
+      }
+    }
+  }
+}
