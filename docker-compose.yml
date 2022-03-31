@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   database: 
-    image: postgresql
+    image: postgres:14.2
     container_name: database_contele
     restart: always
     ports:

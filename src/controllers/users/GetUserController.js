@@ -1,8 +1,8 @@
 const GetUserUseCase = require("../../useCases/GetUserUseCase");
 
-module.exports = class GetUSersController {
+module.exports = class GetUSerController {
     async route(request, response) {
-        const response = await new GetUserUseCase().getUser(request.params.id);
-        response.json(response);
+        const getUserUseCase = await new GetUserUseCase().getUser(request.params.id);
+        response.json(getUserUseCase);
     }
 };

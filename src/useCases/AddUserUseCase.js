@@ -1,6 +1,5 @@
 const bcrypt = require("bcrypt");
 const addUserRepository = require("../repositories/AddUserRepository");
-const schema = require("../../validation/addUserValidate");
 const Responses = require("../utils/Responses");
 
 const saltRounds = 10;
@@ -13,12 +12,12 @@ module.exports = class AddUserUseCase {
 
         const cryptPassword = await bcrypt.hash(password, saltRounds);
 
-        const response = await new addUserRepository(email, cryptPassword).addNewUser()
+        const addUser = await new addUserRepository(email, cryptPassword).addNewUser()
 
-        if (!response.constraint && response.rowCount === 1) {
+        if (!addUser.constraint && addUser.rowCount === 1) {
             return Responses.Ok("Create User success");
         }
 
-        return response;
+        return addUser;
     }
 };

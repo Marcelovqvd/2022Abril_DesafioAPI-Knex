@@ -1,4 +1,4 @@
-const database = require("../../database.index.js");
+const database = require("../database");
 
 module.exports = class DeleteAllUsersRepository {
     async delete() {

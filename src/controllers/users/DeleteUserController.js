@@ -1,8 +1,8 @@
-const DeleteUser = require("../../useCase/user/DeleteUser");
+const DeleteUser = require("../../useCases/DeleteUserUseCase");
 
 module.exports = class DeleteUserController {
     async route(request, response) {
-        const response = await new DeleteUser().delete(request.params.id);
-        res.json(response);
+        const DeleteUser = await new DeleteUser().delete(request.params.id);
+        res.json(DeleteUser);
     }
 };
