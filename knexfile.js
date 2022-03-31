@@ -1,5 +1,5 @@
-export const development = {
-  client: 'pg',
+const development = {
+  client: 'postgresql',
   connection: {
     user: 'user',
     database: 'contelle_db',
@@ -15,3 +15,5 @@ export const development = {
     directory: './src/database/seeds'
   }
 };
+
+export default development
