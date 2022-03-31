@@ -1,3 +1,6 @@
-import knexfile from '../../knexfile.js'
-const knex = knexfile.connection
-export default knex
+const knex = require("knex");
+const knexfile = require("../../knexfile");
+
+const database = knex(knexfile);
+
+module.exports = database;

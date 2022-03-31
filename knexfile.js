@@ -1,15 +1,17 @@
 const development = {
-  client: 'postgresql',
+  client: 'pg',
   connection: {
     user: 'user',
     database: 'contele_db',
-    email: 'marcelo@email.com',
     password: 'password'
+  },
+  pool: {
+    min: 2,
+    max: 10,
   },
   migrations: {
     tableName: 'knex_migrations',
-    directory: './src/database/migrations',
-    disableMigrationsListValidation: true,
+    directory: __dirname + "/src/data/migrations",
   },
   seeds: {
     directory: './src/database/seeds'
