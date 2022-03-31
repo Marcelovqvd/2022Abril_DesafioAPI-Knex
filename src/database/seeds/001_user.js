@@ -4,9 +4,9 @@
  */
 
 exports.seed = function(knex) {
-  return knex('users').del()
+  return knex("users").del()
     .then(function () {
-      return knex('users').insert([
+      return knex("users").insert([
         { email: 'outro@email.com', password: 'password' }
       ]);
     })

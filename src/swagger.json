@@ -1,41 +1,215 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "Documentação",
-    "version": "1.0.0",
-    "title": "Contele API"
+      "description": "Documentação",
+      "version": "1.0.0",
+      "title": "Api de usuários Contele"
   },
-  "host": "localhost:3001",
+  "host": "localhost:3333",
   "basePath": "/api/v1",
   "tags": [
-    {
-        "name": "User",
-        "description": "Manipulação de usuários"
-    }
+      {
+          "name": "User",
+          "description": "Operações relacionadas a usuários"
+      }
   ],
   "paths": {
-    "/users": {
-      "get": {
-        "tags": ["User"],
-        "summary": "Lista usúarios",
-        "description": "Lista todos os usúarios cadastrados",
-        "operationId": "listUsers",
-        "produces": ["application/json"],
-        "responses": {
-          "200": {
-            "description": "Operação Realizada com sucesso",
-            "schema": {
-                "$ref": "#/definitions/User"
+      "/users": {
+          "get": {
+              "tags": ["User"],
+              "summary": "Lista todos os usuários",
+              "description": "Mostra uma lista de todos os usuários cadastrados",
+              "operationId": "ListUsers",
+              "produces": ["application/json"],
+              "responses": {
+                  "200": {
+                      "description": "Operação Realizada com sucesso",
+                      "schema": {
+                          "$ref": "#/definitions/User"
+                      }
+                  },
+                  "400": {
+                      "description": "Requisição inválida"
+                  },
+                  "404": {
+                      "description": "Recurso não encontrado"
+                  }
+              }
+          },
+          "post": {
+              "tags": ["User"],
+              "summary": "Cria Novo usuário",
+              "description": "Criação de novo usuário",
+              "operationId": "createUser",
+              "produces": ["application/json"],
+              "parameters": [
+                  {
+                      "in": "body",
+                      "name": "body",
+                      "description": "Usuário criado",
+                      "required": true,
+                      "schema": {
+                          "$ref": "#/definitions/newUser"
+                      }
+                  }
+              ],
+              "responses": {
+                  "default": {
+                      "description": "Operação realizada com sucesso"
+                  }
+              }
             }
+        },
+        "/users/{id}": {
+          "get": {
+            "tags": ["User"],
+            "summary": "Mostra usuário",
+              "description": "Mostra um usuário",
+              "operationId": "getUser",
+              "produces": ["application/json"],
+              "parameters": [
+                  {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID do usuário requisitado",
+                      "required": true,
+                      "type": "string"
+                  }
+              ],
+              "responses": {
+                  "200": {
+                      "description": "Operação Realizada com sucesso",
+                      "schema": {
+                          "$ref": "#/definitions/getUser"
+                      }
+                  },
+                  "400": {
+                    "description": "Requisição inválida"
+                  },
+                  "404": {
+                      "description": "Recurso não encontrado"
+                  }
+              }
           },
-          "400": {
-            "description": "Erro de requisição"
+          "put": {
+              "tags": ["User"],
+              "summary": "Atualizar usuário",
+              "description": "Atualizar os dados de um usuário",
+              "operationId": "updateUser",
+              "produces": ["application/json"],
+              "parameters": [
+                {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID do usuário requisitado",
+                      "required": true,
+                      "type": "string"
+                  },
+                  {
+                      "in": "body",
+                      "name": "body",
+                      "description": "Usuário atualizado",
+                      "required": true,
+                      "schema": {
+                        "$ref": "#/definitions/UserUpdate"
+                      }
+                  }
+                ],
+              "responses": {
+                  "400": {
+                      "description": "Requisição inválida"
+                  },
+                  "404": {
+                      "description": "Recurso não encontrado"
+                  }
+              }
           },
-          "404": {
-            "description": "Não encontrado"
-          }
-        }
+          "delete": {
+              "tags": ["User"],
+              "summary": "Remove usuário",
+              "description": "Remove um usuário",
+              "operationId": "deleteUserId",
+              "produces": ["application/json"],
+              "parameters": [
+                  {
+                      "name": "id",
+                      "in": "path",
+                      "description": "ID do usuário requisitado",
+                      "required": true,
+                      "type": "string"
+                  }
+              ],
+              "responses": {
+                "400": {
+                  "description": "Requisição inválida"
+                  },
+                  "404": {
+                      "description": "Recurso não encontrado"
+                  }
+                }
+              }
       }
+  },
+  "definitions": {
+      "User": {
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "string"
+              },
+              "email": {
+                  "type": "string"
+              },
+              "password": {
+                  "type": "string"
+              }
+          }
+      },
+      "UserUpdate": {
+          "type": "object",
+          "properties": {
+              "email": {
+                  "type": "string"
+              },
+              "password": {
+                  "type": "string"
+              }
+          }
+      },
+      "newUser": {
+          "type": "object",
+          "properties": {
+              "email": {
+                  "type": "string",
+                  "example": "example@gmail.com"
+              },
+              "password": {
+                  "type": "string",
+                  "example": "123456"
+              }
+          }
+      },
+      "getUser": {
+          "type": "object",
+          "properties": {
+              "id": {
+                  "type": "string"
+              },
+              "email": {
+                  "type": "string"
+              },
+              "password": {
+                  "type": "string"
+              }
+          }
+      },
+      "deleteUser": {
+        "type": "object",
+        "properties": {
+            "id": {
+                "type": "string"
+            }
+        }
     }
   }
 }
