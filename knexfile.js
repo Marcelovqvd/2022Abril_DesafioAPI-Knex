@@ -4,7 +4,6 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
-  development: {
     client: 'postgresql',
     connection: {
       user: 'user',
@@ -22,5 +21,4 @@ module.exports = {
     seeds: {
       directory: `${__dirname}/src/database/seeds`
     }
-  }
 }
