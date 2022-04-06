@@ -4,12 +4,12 @@
  * @type { Object.<string, import("knex").Knex.Config> }
  */
 module.exports = {
-  development: {
-    client: 'postgresql',
+    client: 'pg',
     connection: {
-      user: 'user',
+      host: "database",
+      user: 'marcelo',
       database: 'contele_db',
-      password: 'password'
+      password: '123'
     },
     pool: {
       min: 2,
@@ -22,5 +22,4 @@ module.exports = {
     seeds: {
       directory: `${__dirname }/src/database/seeds`
     }
-  }
 }

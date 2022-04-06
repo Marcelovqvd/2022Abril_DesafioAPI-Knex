@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   database: 
-    image: postgres:14.2
+    image: postgres:alpine
     container_name: database_contele
     restart: always
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_USER=user
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=marcelo
+      - POSTGRES_PASSWORD=123
       - POSTGRES_DB=contele_db
     volumes:
       - pgdata:/data/postgres
