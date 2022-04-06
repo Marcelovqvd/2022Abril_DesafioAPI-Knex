@@ -1,12 +1,12 @@
 {
   "name": "desafio_fullstack",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "src/app.js",
   "repository": "git@github.com:Marcelovqvd/desafio_fullstack.git",
   "author": "Marcelo <marcelovqvd@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon"
+    "dev": "nodemon src/app.js"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",

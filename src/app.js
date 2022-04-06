@@ -13,4 +13,4 @@ app.use(usersRoutes)
 app.use("/api/v1/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 app.use("/api/v1/users", users);
 
-module.exports = app;
+app.listen(3333, () => console.log('Running at 3333'))
