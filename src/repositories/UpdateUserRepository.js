@@ -1,4 +1,4 @@
-const database = require("../database");
+const database = require("../database")
 
 module.exports = class UpdateUserRepository {
     async update(id, email, password) {

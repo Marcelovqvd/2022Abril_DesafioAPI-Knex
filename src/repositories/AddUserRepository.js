@@ -1,6 +1,6 @@
 const { v4: uuidv4 } = require("uuid");
 
-const database = require("../database/index");
+const database = require("../database")
 const User = require("../entities/User");
 
 module.exports = class AddUserRepository {

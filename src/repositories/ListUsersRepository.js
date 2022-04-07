@@ -1,9 +1,5 @@
-const User = require("../entities/User");
-
-const knex = require('knex')
-const knexfile = require('../../knexfile')
-
-const database = knex(knexfile);
+const User = require("../entities/User")
+const database = require("../database")
 
 module.exports = class ListUsersRepository {
     async All() {
