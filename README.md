@@ -46,7 +46,7 @@ Criar um serviço de API RESTFUL usando nodejs express
 </br>
 
 
-## Instalação
+## Instalação e execução do projeto
 
         //clonar o repositório
         git clone https://github.com/Marcelovqvd/desafio_fullstack.git
@@ -54,11 +54,10 @@ Criar um serviço de API RESTFUL usando nodejs express
         //acessar o diretório
         cd desafio_fullstack
         
-        //executar o comando
+        //executar os comandos
+        yarn install
         docker-compose -up -d
-        
-        //executar o comando
-        knex migrate:latest
+        npx knex migrate:latest
         
 </br>
 
