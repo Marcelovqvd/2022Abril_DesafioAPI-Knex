@@ -16,9 +16,11 @@ module.exports = class UpdateUserUseCase {
             const updateUserRepository = await new UpdateUserRepository().update(id, data.email, passwordCripto);
 
             if (updateUserRepository > 0) return Responses.Created("User data edited succefully");
+
             if (updateUserRepository === 0) {
                 return Responses.NotModified("User not edited, id and user non-existent");
             }
+            
         } else {
             return Responses.NotModified("User not edited, id Invalid");
         }

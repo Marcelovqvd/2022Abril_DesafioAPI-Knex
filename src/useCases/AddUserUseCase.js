@@ -1,12 +1,16 @@
 const bcrypt = require("bcrypt");
 const addUserRepository = require("../repositories/AddUserRepository");
 const Responses = require("../utils/Responses");
+const addUserUseCaseValidate = require("../useCases/validate/addUserUseCaseValidate");
 
 const saltRounds = 10;
 
 module.exports = class AddUserUseCase {
-    async addUser(email, password) {
+    async addUser(email, password) {        
+        const { error } = addUserUseCaseValidate.validate({ email: email, password: password });
 
+        if (error) return Responses.BadRequest(error.message);
+        
         const cryptPassword = await bcrypt.hash(password, saltRounds);
 
         const addUser = await new addUserRepository(email, cryptPassword).addNewUser()
