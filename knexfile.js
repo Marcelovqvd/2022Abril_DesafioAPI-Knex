@@ -6,7 +6,7 @@
 module.exports = {
     client: 'postgresql',
     connection: {
-      host: 'localhost',
+      host: 'database',
       user: 'marcelo',
       database: 'contele_db',
       password: '123'
