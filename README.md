@@ -1,32 +1,23 @@
-# desafio_fullstack
+</br>
 
-NodeJS; Express; Postgres; Knex; Swagger
+  <h1>Desafio Contele fullstack-junior</h1>
 
-### Software
+<p>Projeto de API RESTFUL para vaga de desenvolvedor fullstack-junior</p>
 
-- Docker
-- NodeJS
-- NVM ( geranciador de versões para NodeJS, pois trabalhamos com versões diferentes em vários projetos )
-- Client para Database - Desejável que seja o Dbeaver.
-- Editor de texto - Desejável que seja o vscode.
-- Sistema Operacional - Desejável que seja alguma distribuição Linux.
+</br>
 
-### O objetivo deste teste é avaliar seus conhecimentos:
+ ## Objetivo
 
-- Em organização
-- Boas práticas e suas habilidades de programação.
-- Qualidade de código.
-
-## TESTE
-
-##### Criar um serviço de API RESTFUL usando nodejs express
+Criar um serviço de API RESTFUL usando nodejs express
 
 - Criar 4 endpoints GET/POST/PUT/DELETE
 - Documentação utilizando swagger.
 - docker/compose.
 - postgres.
 
-### Premissas
+</br>
+
+## Premissas
 
 - JAVASCRIPT.
 - Salvar (email, senha).
@@ -37,7 +28,11 @@ NodeJS; Express; Postgres; Knex; Swagger
 - Express
 - Postgres
 
-### Documentação
+</br>
+
+## Documentação
+
+##### http://localhost:3000/api/v1/docs/
 
 | HTTP   | ROUTE                 | BODY               | DESCRIÇÃO              |
 | ------ | --------------------- | ------------------ | ---------------------- |
@@ -48,24 +43,32 @@ NodeJS; Express; Postgres; Knex; Swagger
 | DELETE | /api/v1/users         |                    | Deletar todos usuarios |
 | DELETE | /api/v1/users/user_id |                    | Deletar único usuário  |
 
-# Cuidados!
+</br>
 
-🔴 Fiqué atento a copia de trechos de codigos.
 
-## O que apreciamos
+## Instalação
 
-Validações
-Código limpo e bem organizado
-README.md bem organizado
+        //clonar o repositório
+        git clone https://github.com/Marcelovqvd/desafio_fullstack.git
+        
+        //acessar o diretório
+        cd desafio_fullstack
+        
+        //executar o comando
+        docker-compose -up -d
+        
+        //executar o comando
+        knex migrate:latest
+        
+</br>
 
-# Finalizando
+## Autor
 
-- Suba a sua proposta para o projeto que você criou no GitHub e nos envie o link.
-- Exemplo: https://github.com/seuNome/test-FullstackJSJunior.git;
-- Aguarde o RH entrar em contato.
+[Marcelo Vasques Vedroni](https://github.com/Marcelovqvd)
 
-### Quem buscamos
+</br>
+        
+## :memo: Licença
 
-Queremos uma pessoa que gosta do que faz, que trabalhe em equipe e tenha vontade de inovar. Sempre buscando atualização e soluções inovadoras.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
-### Venha fazer parte do nosso time!
