@@ -6,9 +6,6 @@ const saltRounds = 10;
 
 module.exports = class AddUserUseCase {
     async addUser(email, password) {
-        const { error } = schema.validate({ email: email, password: password });
-
-        if (error) return Responses.BadRequest(error.message);
 
         const cryptPassword = await bcrypt.hash(password, saltRounds);
 

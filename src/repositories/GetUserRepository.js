@@ -1,5 +1,3 @@
-const { v4: uuidv4 } = require("uuid");
-
 const database = require("../database")
 const User = require("../entities/User");
 
