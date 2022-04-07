@@ -6,9 +6,9 @@
 module.exports = {
     client: 'postgresql',
     connection: {
-      user: 'user',
+      user: 'marcelo',
       database: 'contele_db',
-      password: 'password'
+      password: '123'
     },
     pool: {
       min: 2,
@@ -17,6 +17,7 @@ module.exports = {
     migrations: {
       tableName: 'knex_migrations',
       directory: `${__dirname}/src/database/migrations`,
+      disableMigrationsListValidation: true,
     },
     seeds: {
       directory: `${__dirname}/src/database/seeds`
