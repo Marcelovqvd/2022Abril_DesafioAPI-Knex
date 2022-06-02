@@ -1,12 +1,4 @@
-</br>
-
-  <h1>Desafio Contele fullstack-junior</h1>
-
-<p>Projeto de API RESTFUL para vaga de desenvolvedor fullstack-junior</p>
-
-</br>
-
- ## Objetivo
+## Objetivo
 
 Criar um serviço de API RESTFUL usando nodejs express
 
